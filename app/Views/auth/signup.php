@@ -51,17 +51,6 @@
                             <?php endif; ?>
                         </div>
 
-                        <!-- Email Input -->
-                        <div class="mb-3">
-                            <label for="email" class="form-label">ایمیل</label>
-                            <input type="email" class="form-control <?= isset($validation) && $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" name="email" placeholder="ایمیل خود را وارد کنید" value="<?= old('email') ?>" required>
-                            <?php if (isset($validation) && $validation->hasError('email')): ?>
-                                <div class="invalid-feedback">
-                                    <?= $validation->getError('email') ?>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-
                         <!-- Password Input -->
                         <div class="mb-3">
                             <label for="password" class="form-label">کلمه عبور</label>
