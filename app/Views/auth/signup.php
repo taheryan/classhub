@@ -77,10 +77,9 @@
                         <div class="mb-3">
                             <label for="role" class="form-label">نقش کاربری</label>
                             <select class="form-select <?= isset($validation) && $validation->hasError('role') ? 'is-invalid' : '' ?>" id="role" name="role" required>
-                                <option value="مشتری" <?= old('role') == 'مشتری' ? 'selected' : '' ?>>مشتری</option>
-                                <option value="مدیر" <?= old('role') == 'مدیر' ? 'selected' : '' ?>>مدیر</option>
-                                <option value="پشتیبان فنی" <?= old('role') == 'پشتیبان فنی' ? 'selected' : '' ?>>پشتیبان فنی</option>
-                                <option value="فروش" <?= old('role') == 'فروش' ? 'selected' : '' ?>>فروش</option>
+                                <option value="دانشجو" <?= old('role') == 'دانشجو' ? 'selected' : '' ?>>دانشجو</option>
+                                <option value="مدرس" <?= old('role') == 'مدرس' ? 'selected' : '' ?>>مدرس</option>
+                                <option value="کارشناس آموزش" <?= old('role') == 'کارشناس آموزش' ? 'selected' : '' ?>>کارشناس آموزش</option>
                             </select>
                             <?php if (isset($validation) && $validation->hasError('role')): ?>
                                 <div class="invalid-feedback">
