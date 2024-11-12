@@ -1,86 +1,57 @@
 <?= $this->extend('layouts/main_layout') ?>
 
 <?= $this->section('title') ?>
-    Course Management Dashboard
+    نمایش دوره‌ها، اساتید و دانشجویان
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 
 <div class="container mt-5">
-    <!-- Title Section -->
-    <div class="row mb-4">
-        <div class="col">
-            <h2 class="text-center">Dashboard</h2>
-            <p class="text-center text-muted">Manage your courses, teachers, and students efficiently</p>
-        </div>
-    </div>
+    <h2 class="text-center mb-4">دوره‌ها، اساتید و دانشجویان</h2>
 
-    <!-- Grid for Courses, Teachers, Students -->
     <div class="row">
-        <!-- Courses Section -->
+        <!-- Courses Button Grid -->
         <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Courses</h5>
-                </div>
-                <div class="card-body">
-                    <h6 class="card-title">Active Courses</h6>
-                    <ul class="list-group">
-                        <?php foreach ($courses as $course): ?>
-                            <li class="list-group-item">
-                                <strong><?= esc($course['course_name']) ?></strong>
-                                <p class="text-muted"><?= esc($course['course_description']) ?></p>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <a href="<?= site_url('courses') ?>" class="btn btn-primary btn-sm mt-3">View All Courses</a>
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">دوره‌ها</h5>
+                    <a href="<?= site_url('courses') ?>" class="btn btn-primary w-100 mb-3">مشاهده دوره‌ها</a>
+                    <!-- Example of multiple buttons representing individual courses -->
+                    <a href="<?= site_url('courses/1') ?>" class="btn btn-outline-primary w-100 mb-2">دوره 1</a>
+                    <a href="<?= site_url('courses/2') ?>" class="btn btn-outline-primary w-100 mb-2">دوره 2</a>
+                    <a href="<?= site_url('courses/3') ?>" class="btn btn-outline-primary w-100 mb-2">دوره 3</a>
                 </div>
             </div>
         </div>
 
-        <!-- Teachers Section -->
+        <!-- Teachers Button Grid -->
         <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-success text-white">
-                    <h5 class="mb-0">Teachers</h5>
-                </div>
-                <div class="card-body">
-                    <h6 class="card-title">Our Teachers</h6>
-                    <ul class="list-group">
-                        <?php foreach ($teachers as $teacher): ?>
-                            <li class="list-group-item">
-                                <strong><?= esc($teacher['first_name']) . ' ' . esc($teacher['last_name']) ?></strong>
-                                <p class="text-muted"><?= esc($teacher['email']) ?></p>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <a href="<?= site_url('teachers') ?>" class="btn btn-success btn-sm mt-3">View All Teachers</a>
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">اساتید</h5>
+                    <a href="<?= site_url('teachers') ?>" class="btn btn-success w-100 mb-3">مشاهده اساتید</a>
+                    <!-- Example of multiple buttons representing individual teachers -->
+                    <a href="<?= site_url('teachers/1') ?>" class="btn btn-outline-success w-100 mb-2">استاد 1</a>
+                    <a href="<?= site_url('teachers/2') ?>" class="btn btn-outline-success w-100 mb-2">استاد 2</a>
+                    <a href="<?= site_url('teachers/3') ?>" class="btn btn-outline-success w-100 mb-2">استاد 3</a>
                 </div>
             </div>
         </div>
 
-        <!-- Students Section -->
+        <!-- Students Button Grid -->
         <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-info text-white">
-                    <h5 class="mb-0">Students</h5>
-                </div>
-                <div class="card-body">
-                    <h6 class="card-title">Registered Students</h6>
-                    <ul class="list-group">
-                        <?php foreach ($students as $student): ?>
-                            <li class="list-group-item">
-                                <strong><?= esc($student['first_name']) . ' ' . esc($student['last_name']) ?></strong>
-                                <p class="text-muted"><?= esc($student['email']) ?></p>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <a href="<?= site_url('students') ?>" class="btn btn-info btn-sm mt-3">View All Students</a>
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">دانشجویان</h5>
+                    <a href="<?= site_url('students') ?>" class="btn btn-warning w-100 mb-3">مشاهده دانشجویان</a>
+                    <!-- Example of multiple buttons representing individual students -->
+                    <a href="<?= site_url('students/1') ?>" class="btn btn-outline-warning w-100 mb-2">دانشجو 1</a>
+                    <a href="<?= site_url('students/2') ?>" class="btn btn-outline-warning w-100 mb-2">دانشجو 2</a>
+                    <a href="<?= site_url('students/3') ?>" class="btn btn-outline-warning w-100 mb-2">دانشجو 3</a>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 
 <?= $this->endSection() ?>
