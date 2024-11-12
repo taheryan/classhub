@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CourseModel extends Model
+class Course extends Model
 {
     // Define the table name for this model
     protected $table      = 'courses';
