@@ -52,7 +52,7 @@ class Auth extends BaseController
             $userModel = new User();
 
             // Insert the new user into the database
-            if ($userModel->insert($userData)) {
+            if ($userModel->insertUser($userData)) {
                 // Redirect or show success message
                 return redirect()->to('auth/login')->with('success', 'ثبت نام شما با موفقیت انجام شد!');
             } else {
