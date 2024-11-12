@@ -91,6 +91,12 @@ class User extends Model
         return $this->update($id, $data);
     }
 
+    // Fetch user by username or email
+    public function getUserByUsername($username)
+    {
+        return $this->where('username', $username)->first();
+    }
+
     // Delete a user
     public function deleteUser($id)
     {
