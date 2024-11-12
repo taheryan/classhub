@@ -30,3 +30,35 @@ Stack trace:
 #10 C:\xampp\htdocs\classhub\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
 #11 C:\xampp\htdocs\classhub\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
 #12 {main}
+ERROR - 2024-11-12 05:16:57 --> mysqli_sql_exception: Display width out of range for 'course_duration' (max = 255) in C:\xampp\htdocs\classhub\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\classhub\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `c...', 0)
+#1 C:\xampp\htdocs\classhub\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `c...')
+#2 C:\xampp\htdocs\classhub\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `c...')
+#3 C:\xampp\htdocs\classhub\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `c...')
+#4 C:\xampp\htdocs\classhub\app\Database\Migrations\2024-11-12-051415_CreateCourses.php(60): CodeIgniter\Database\Forge->createTable('courses')
+#5 C:\xampp\htdocs\classhub\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateCourses->up()
+#6 C:\xampp\htdocs\classhub\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\classhub\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\classhub\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\classhub\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\classhub\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\classhub\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\classhub\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2024-11-12 05:17:15 --> mysqli_sql_exception: Display width out of range for 'course_duration' (max = 255) in C:\xampp\htdocs\classhub\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\classhub\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `c...', 0)
+#1 C:\xampp\htdocs\classhub\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `c...')
+#2 C:\xampp\htdocs\classhub\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `c...')
+#3 C:\xampp\htdocs\classhub\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `c...')
+#4 C:\xampp\htdocs\classhub\app\Database\Migrations\2024-11-12-051415_CreateCourses.php(60): CodeIgniter\Database\Forge->createTable('courses')
+#5 C:\xampp\htdocs\classhub\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateCourses->up()
+#6 C:\xampp\htdocs\classhub\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\classhub\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\classhub\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\classhub\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\classhub\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\classhub\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\classhub\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
