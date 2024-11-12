@@ -81,7 +81,7 @@ class Auth extends BaseController
             $session->set('username', $user['username']);
             $session->set('role', $user['role']);
 
-            return redirect()->to('/tickets');
+            return redirect()->to('/');
         }
 
         // If authentication fails
