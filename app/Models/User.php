@@ -32,9 +32,8 @@ class User extends Model
     // Validation rules for the User model
     protected $validationRules    = [
         'username' => 'required|min_length[3]|max_length[20]|is_unique[users.username]',
-        'email'    => 'required|valid_email|is_unique[users.email]',
         'password' => 'required|min_length[8]',
-        'confirm_password' => 'required|matches[password]', // 'matches' ensures they match
+        // 'confirm_password' => 'required|matches[password]', // 'matches' ensures they match
         'role' => 'required|in_list[دانشجو,مدرس,کارشناس آموزش]',
     ];
 
@@ -45,11 +44,6 @@ class User extends Model
             'min_length' => 'Username must be at least 3 characters.',
             'max_length' => 'Username cannot exceed 20 characters.',
             'is_unique' => 'Username is already taken.',
-        ],
-        'email' => [
-            'required' => 'Email is required.',
-            'valid_email' => 'Please provide a valid email address.',
-            'is_unique' => 'Email is already in use.',
         ],
         'password' => [
             'required' => 'Password is required.',
