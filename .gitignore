@@ -2,7 +2,6 @@
 */logs/log-*.php
 !*/logs/index.html
 */cache/*
-/writable/*
 !system/cache/*
 !*/cache/index.html
 !*/cache/.htaccess
@@ -17,3 +16,6 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+
+writable/
+# Ignore cache and logs
