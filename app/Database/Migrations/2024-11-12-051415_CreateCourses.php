@@ -29,6 +29,14 @@ class CreateCourses extends Migration
                 'constraint' => 11,
                 'unsigned'   => true,
             ],
+            'start_date'    => [
+                'type'       => 'DATE',
+                'null'       => true,
+            ],
+            'end_date'      => [
+                'type'       => 'DATE',
+                'null'       => true,
+            ],
             'category'      => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
