@@ -62,3 +62,45 @@ Stack trace:
 #11 C:\xampp\htdocs\classhub\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
 #12 C:\xampp\htdocs\classhub\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
 #13 {main}
+CRITICAL - 2024-11-12 05:56:31 --> Error: Call to undefined function set_value()
+[Method: GET, Route: auth/signup]
+in APPPATH\Views\auth\signup.php on line 24.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/signup', [], true)
+ 4 APPPATH\Controllers\Auth.php(17): view('auth/signup')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-12 05:56:33 --> Error: Call to undefined function set_value()
+[Method: GET, Route: auth/signup]
+in APPPATH\Views\auth\signup.php on line 24.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/signup', [], true)
+ 4 APPPATH\Controllers\Auth.php(17): view('auth/signup')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-12 05:56:52 --> Error: Call to undefined function set_value()
+[Method: GET, Route: auth/signup]
+in APPPATH\Views\auth\signup.php on line 24.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/signup', [], true)
+ 4 APPPATH\Controllers\Auth.php(17): view('auth/signup')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-11-12 05:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -14,6 +14,7 @@ class Auth extends BaseController
 
     public function signup(): string
     {
+        helper('form');  // Load the form helper
         return view('auth/signup');
     }
 
