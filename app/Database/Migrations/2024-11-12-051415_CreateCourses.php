@@ -24,6 +24,11 @@ class CreateCourses extends Migration
                 'type'       => 'TEXT',
                 'null'       => true,
             ],
+            'teacher_id'    => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'unsigned'   => true,
+            ],
             'category'      => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
