@@ -12,7 +12,7 @@ class Auth extends BaseController
         return view('auth/login');
     }
 
-    public function signup(): string
+    public function signup()
     {
         helper('form');  // Load the form helper
 
@@ -54,7 +54,7 @@ class Auth extends BaseController
             // Insert the new user into the database
             if ($userModel->insertUser($userData)) {
                 // Redirect or show success message
-                return redirect()->to('auth/login');
+                return redirect()->to('/auth')->with('success', 'با موفقیت ثبت نام انجام شد.');
             } else {
                 // Handle the case if insertion fails
                 return redirect()->back()->with('error', 'مشکلی در ثبت نام پیش آمده است.');
@@ -63,8 +63,6 @@ class Auth extends BaseController
 
             return view('auth/signup');
         }
-
-
     }
 
     public function login()
