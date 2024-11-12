@@ -27,6 +27,7 @@ class User extends Model
         'username' => 'required|min_length[3]|max_length[20]|is_unique[users.username]',
         'email'    => 'required|valid_email|is_unique[users.email]',
         'password' => 'required|min_length[8]',
+        'confirm_password' => 'required|matches[password]', // 'matches' ensures they match
         'role'     => 'required|in_list[admin,teacher,student]',
     ];
     

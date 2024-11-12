@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/main_layout') ?>
 
 <?= $this->section('title') ?>
-ثبت نام کاربر
+    ثبت نام کاربر
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -14,7 +14,7 @@
                     <h2>ثبت نام کاربر</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="<?= site_url('auth/register') ?>">
+                    <form method="POST" action="http://localhost/classhub/public/auth/signup">
                         <!-- CSRF Token -->
                         <?= csrf_field() ?>
 
@@ -58,6 +58,17 @@
                             <?php if (isset($validation) && $validation->hasError('password')): ?>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('password') ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+
+                        <!-- Confirm Password Input -->
+                        <div class="mb-3">
+                            <label for="confirm_password" class="form-label">تایید کلمه عبور</label>
+                            <input type="password" class="form-control <?= isset($validation) && $validation->hasError('confirm_password') ? 'is-invalid' : '' ?>" id="confirm_password" name="confirm_password" placeholder="کلمه عبور خود را دوباره وارد کنید" required>
+                            <?php if (isset($validation) && $validation->hasError('confirm_password')): ?>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('confirm_password') ?>
                                 </div>
                             <?php endif; ?>
                         </div>

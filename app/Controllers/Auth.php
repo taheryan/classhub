@@ -15,45 +15,57 @@ class Auth extends BaseController
     public function signup(): string
     {
         helper('form');  // Load the form helper
+
+        // Load the validation service
+        $validation = \Config\Services::validation();
+
+        // Check if the form was submitted
+        if ($this->request->getMethod() === 'post') {
+            // Define the validation rules
+            $rules = [
+                'first_name' => 'required|min_length[3]|max_length[50]',
+                'last_name' => 'required|min_length[3]|max_length[50]',
+                'username' => 'required|min_length[3]|max_length[50]|is_unique[users.username]', // Unique username check
+                'email' => 'required|valid_email|is_unique[users.email]', // Unique email check
+                'password' => 'required|min_length[6]',
+                'confirm_password' => 'required|matches[password]', // Ensure passwords match
+                'role' => 'required|in_list[دانشجو,مدرس,کارشناس آموزش]',
+            ];
+
+            // Validate input
+            if (!$this->validate($rules)) {
+                // If validation fails, reload the form with validation errors
+                return view('auth/signup', [
+                    'validation' => $this->validator,
+                ]);
+            }
+
+            // Gather the user input
+            $userData = [
+                'first_name' => $this->request->getPost('first_name'),
+                'last_name' => $this->request->getPost('last_name'),
+                'username' => $this->request->getPost('username'),
+                'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT), // Hash the password
+                'role' => $this->request->getPost('role'),
+                'created_at' => date('Y-m-d H:i:s'),
+            ];
+
+            // Load the UserModel to interact with the database
+            $userModel = new User();
+
+            // Insert the new user into the database
+            if ($userModel->insert($userData)) {
+                // Redirect or show success message
+                return redirect()->to('auth/login')->with('success', 'ثبت نام شما با موفقیت انجام شد!');
+            } else {
+                // Handle the case if insertion fails
+                return redirect()->back()->with('error', 'مشکلی در ثبت نام پیش آمده است.');
+            }
+        }
+
+
         return view('auth/signup');
     }
-
-    public function register()
-    {
-        // Get input data
-        $username = $this->request->getPost('username');
-        $password = $this->request->getPost('password');
-        $role = $this->request->getPost('role');
-
-
-
-        // Validate inputs (you can add more validation as needed)
-        if (empty($username) || empty($password) || empty($role)) {
-            return redirect()->back()->with('error', 'All fields are required.');
-        }
-
-
-
-        // Hash the password
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        // Prepare user data
-        $userData = [
-            'username' => $username,
-            'password' => $hashedPassword,
-            'role' => $role,
-            'created_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Save the user to the database
-        $userModel = new User();
-        if ($userModel->save($userData)) {
-            return redirect()->to('/auth')->with('success', 'User registered successfully!');
-        } else {
-            return redirect()->back()->with('error', 'There was an issue registering the user.');
-        }
-    }
-
 
     public function login()
     {
