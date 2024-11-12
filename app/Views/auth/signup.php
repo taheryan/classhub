@@ -11,7 +11,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header text-center">
-                    <h2>ثبت نام کاربر</h2>
+                    <h2>ثبت نام</h2>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="http://localhost/classhub/public/auth/signup">

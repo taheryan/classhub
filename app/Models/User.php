@@ -14,7 +14,14 @@ class User extends Model
 
     // Define the allowed fields for insert/update
     protected $allowedFields = [
-        'username', 'email', 'password', 'role', 'first_name', 'last_name', 'created_at', 'updated_at'
+        'username',
+        'email',
+        'password',
+        'role',
+        'first_name',
+        'last_name',
+        'created_at',
+        'updated_at'
     ];
 
     // Define the data type for each column (optional but recommended)
@@ -28,9 +35,9 @@ class User extends Model
         'email'    => 'required|valid_email|is_unique[users.email]',
         'password' => 'required|min_length[8]',
         'confirm_password' => 'required|matches[password]', // 'matches' ensures they match
-        'role'     => 'required|in_list[admin,teacher,student]',
+        'role' => 'required|in_list[دانشجو,مدرس,کارشناس آموزش]',
     ];
-    
+
     // Validation error messages (optional)
     protected $validationMessages = [
         'username' => [
@@ -53,7 +60,7 @@ class User extends Model
             'in_list' => 'Role must be one of admin, teacher, or student.',
         ],
     ];
-    
+
     // Return a list of users based on role (can be customized further)
     public function getUsersByRole($role = 'student')
     {

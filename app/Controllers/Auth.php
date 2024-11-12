@@ -20,18 +20,16 @@ class Auth extends BaseController
         $validation = \Config\Services::validation();
 
         // Check if the form was submitted
-        if ($this->request->getMethod() === 'post') {
+        if ($this->request->getMethod() === 'POST') {
             // Define the validation rules
             $rules = [
                 'first_name' => 'required|min_length[3]|max_length[50]',
                 'last_name' => 'required|min_length[3]|max_length[50]',
                 'username' => 'required|min_length[3]|max_length[50]|is_unique[users.username]', // Unique username check
-                'email' => 'required|valid_email|is_unique[users.email]', // Unique email check
                 'password' => 'required|min_length[6]',
                 'confirm_password' => 'required|matches[password]', // Ensure passwords match
                 'role' => 'required|in_list[دانشجو,مدرس,کارشناس آموزش]',
             ];
-
             // Validate input
             if (!$this->validate($rules)) {
                 // If validation fails, reload the form with validation errors
@@ -45,7 +43,7 @@ class Auth extends BaseController
                 'first_name' => $this->request->getPost('first_name'),
                 'last_name' => $this->request->getPost('last_name'),
                 'username' => $this->request->getPost('username'),
-                'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT), // Hash the password
+                'password' => $this->request->getPost('password'),
                 'role' => $this->request->getPost('role'),
                 'created_at' => date('Y-m-d H:i:s'),
             ];
@@ -61,10 +59,12 @@ class Auth extends BaseController
                 // Handle the case if insertion fails
                 return redirect()->back()->with('error', 'مشکلی در ثبت نام پیش آمده است.');
             }
+        } else {
+
+            return view('auth/signup');
         }
 
 
-        return view('auth/signup');
     }
 
     public function login()
